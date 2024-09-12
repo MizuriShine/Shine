@@ -5,8 +5,9 @@ public class ShineTask
 	[Key]
 	public int Id { get; set; }
 	[Required]
-	public string Title { get; set; }
-	public string Description { get; set; }
-	public DateTime CreatedDate { get; set; } = DateTime.Now;
+	[MaxLength(100)]
+	public required string Title { get; set; }
+	public string? Description { get; set; }
+	public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 	public DateTime? UpdatedDate { get; set;}
 }
