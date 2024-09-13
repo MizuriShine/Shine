@@ -19,6 +19,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IShineTaskRepository, ShineTaskRepository>();
+
+builder.Services.AddScoped<ShineTaskService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
