@@ -27,8 +27,8 @@ public class ShineTaskService
 		return _taskRepository.UpdateTaskAsync(task);
 	}
 	
-	public Task DeleteTaskAsync(int id)
+	public Task DeleteTaskAsync(ShineTask task)
 	{
-		return _taskRepository.DeleteTaskAsync(id);
+		return _taskRepository.DeleteTaskAsync(task);
 	}
 }

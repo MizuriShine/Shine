@@ -20,8 +20,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IShineTaskRepository, ShineTaskRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 
 builder.Services.AddScoped<ShineTaskService>();
+builder.Services.AddScoped<ProjectService>();
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-public class ShineTask
+public class Project
 {
 	[Key]
 	public int Id { get; set; }
