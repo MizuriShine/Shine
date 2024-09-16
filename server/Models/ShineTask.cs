@@ -9,5 +9,5 @@ public class ShineTask
 	public required string Title { get; set; }
 	public string? Description { get; set; }
 	public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-	public DateTime? UpdatedDate { get; set;}
+	public DateTime? UpdatedDate { get; set; }
 }

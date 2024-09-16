@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ShineTasksController : ControllerBase
+public class ShineTaskController : ControllerBase
 {
 	private readonly ShineTaskService _taskService;
 	
-	public ShineTasksController(ShineTaskService taskService)
+	public ShineTaskController(ShineTaskService taskService)
 	{
 		_taskService = taskService;
 	}
@@ -74,7 +74,7 @@ public class ShineTasksController : ControllerBase
 		if (existingTask == null)
 			return NotFound();
 			
-		await _taskService.DeleteTaskAsync(id);
+		await _taskService.DeleteTaskAsync(existingTask);
 		
 		return NoContent();
 	}

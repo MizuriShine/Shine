@@ -6,7 +6,7 @@ public interface IShineTaskRepository
 	Task<ShineTask?> GetTaskByIdAsync(int id);
 	Task CreateTaskAsync(ShineTask task);
 	Task UpdateTaskAsync(ShineTask task);
-	Task DeleteTaskAsync(int id);
+	Task DeleteTaskAsync(ShineTask task);
 }
 
 public class ShineTaskRepository : IShineTaskRepository
@@ -40,14 +40,9 @@ public class ShineTaskRepository : IShineTaskRepository
 		await _dbContext.SaveChangesAsync();
 	}
 
-	public async Task DeleteTaskAsync(int id)
+	public async Task DeleteTaskAsync(ShineTask task)
 	{
-		var task = await _dbContext.Tasks.FindAsync();
-		
-		if (task != null)
-		{
-			_dbContext.Remove(task);
-			await _dbContext.SaveChangesAsync();
-		}
+		_dbContext.Remove(task);
+		await _dbContext.SaveChangesAsync();
 	}
 }
